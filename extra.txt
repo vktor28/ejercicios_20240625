@@ -1,0 +1,30 @@
+https://www.w3resource.com/mysql-exercises/join-exercises/index.php#PracticeOnline
+
+1.
+SELECT l.location_id, l.street_address, l.city, l.state_province, c.country_name
+FROM locations l
+INNER JOIN countries c
+ON c.country_id=l.country_id
+
+2.
+SELECT e.first_name, e.last_name, d.department_id, d.department_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id=d.department_id
+
+3.
+SELECT e.first_name, e.last_name, j.job_title, d.department_id, d.department_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id=d.department_id
+INNER JOIN jobs j
+ON j.job_id=e.job_id
+INNER JOIN locations l
+ON l.location_id=d.location_id where l.city="LONDON"
+
+4. 
+SELECT e.employee_id, e.first_name, e.last_name, m.manager_id, m.first_name, m.last_name
+FROM employees e
+INNER JOIN employees m
+ON e.manager_id = m.employee_id
+
